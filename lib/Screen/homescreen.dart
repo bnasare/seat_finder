@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:seat_finder/Screen/seats.dart';
+import 'package:seat_finder/Widget/seats.dart';
 import 'package:seat_finder/Widget/app_bar.dart';
 import 'package:seat_finder/Widget/search_box.dart';
 import 'package:seat_finder/Widget/Reusable%20widgets/snackbar_message.dart';
