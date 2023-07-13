@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:seat_finder/Utilities/colors.dart';
 
 class SeatsWidgets extends StatefulWidget {
-  final int? selectedSeatNumber;
+  late int? selectedSeatNumber;
 
-  const SeatsWidgets({Key? key, this.selectedSeatNumber}) : super(key: key);
+  SeatsWidgets({Key? key, this.selectedSeatNumber}) : super(key: key);
 
   @override
   _SeatsWidgetsState createState() => _SeatsWidgetsState();
@@ -26,7 +26,7 @@ class _SeatsWidgetsState extends State<SeatsWidgets> {
   }
 
   void scrollToSeat(int seatNumber) {
-    final double scrollPosition = (seatNumber - 5) * 12;
+    final double scrollPosition = (seatNumber - 5) * 13.5;
 
     _scrollController.animateTo(
       scrollPosition,
@@ -39,7 +39,7 @@ class _SeatsWidgetsState extends State<SeatsWidgets> {
     Color seatBorderColor = color;
     Color seatFillColor = transparentColor;
 
-    if ([15, 23, 31, 39, 47, 55, 63, 71].contains(number)) {
+    if ([15, 23, 31, 39, 47].contains(number)) {
       seatBorderColor = sideLowerBerthColor;
     }
 
@@ -51,6 +51,7 @@ class _SeatsWidgetsState extends State<SeatsWidgets> {
         number == widget.selectedSeatNumber) {
       seatBorderColor = blackColor;
       seatFillColor = sideLowerBerthColor;
+      scrollToSeat(number);
     } else if (number == widget.selectedSeatNumber) {
       seatBorderColor = blackColor;
       seatFillColor = color;
