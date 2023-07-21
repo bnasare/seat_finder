@@ -4,13 +4,12 @@ import 'package:seat_finder/Utilities/colors.dart';
 class SearchBoxWidget extends StatefulWidget {
   final TextEditingController controller;
   final VoidCallback onSearchPressed;
-  final VoidCallback onClearPressed; // Add this callback function.
-
+  final VoidCallback onClearPressed;
   const SearchBoxWidget({
     Key? key,
     required this.controller,
     required this.onSearchPressed,
-    required this.onClearPressed, // Pass the callback function as a parameter.
+    required this.onClearPressed,
   }) : super(key: key);
 
   @override
