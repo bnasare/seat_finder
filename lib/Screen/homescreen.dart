@@ -35,6 +35,13 @@ class _HomeScreenState extends State<HomeScreen> {
     }
   }
 
+  void clearSelectedSeat() {
+    setState(() {
+      selectedSeatNumber = null;
+    });
+    FocusScope.of(context).unfocus();
+  }
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -50,6 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
             SearchBoxWidget(
               controller: _searchController,
               onSearchPressed: searchButtonPressed,
+              onClearPressed: clearSelectedSeat,
             ),
             const SizedBox(height: 20),
             Expanded(

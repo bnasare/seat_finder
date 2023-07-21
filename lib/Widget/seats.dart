@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-
 import 'package:seat_finder/Utilities/colors.dart';
 
 class SeatsWidgets extends StatefulWidget {
   final int? selectedSeatNumber;
 
-  SeatsWidgets({
+  const SeatsWidgets({
     Key? key,
     this.selectedSeatNumber,
   }) : super(key: key);
